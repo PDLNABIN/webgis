@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Traverse Coordinate Calculation</title>
+    <style>
+        
+        html, body {
+            height: 100%;
+            margin: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background-color: #483b3b;
+        }
+
+        
+    .container {
+        flex: 1;
+        background-color: rgba(255, 255, 255, 0.5);
+        border-radius: 10px;
+        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+        padding: 20px;
+        margin: 0 10px;
+        }
+    .side-container {
+        flex: 0 0 100px; 
+        background-color: rgba(200, 200, 200, 0.5); 
+        border-radius: 10px;
+        margin: 0 10px; 
+        height: 100%; 
+        }
+
+        
+        .flex-row {
+            display: flex;
+            justify-content: space-between;
+            width: 100%;
+            max-width: 600px;
+            margin: 0 auto 20px auto; 
+        }
+
+        
+        .flex-buttons {
+            display: flex;
+            justify-content: space-between;
+            width: 100%;
+            max-width: 400px;
+            margin: 20px auto;
+        }
+
+        
+        .point-input-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            width: 100%;
+            max-width: 600px;
+            margin: 10px auto;
+        }
+
+       
+        input, button {
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            width: 48%; 
+        }
+
+        button {
+            background-color: #5f3535;
+            color: white;
+            cursor: pointer;
+            width: 48%;
+        }
+
+        button:hover {
+            background-color: #4cae4c;
+        }
+
+        
+        img {
+            width: 200px;
+            margin-bottom: 20px;
+            display: block;
+            margin: 0 auto;
+            background-blend-mode: normal;
+        }
+
+        h1, h3 {
+            text-align: center;
+        }
+
+        
+        #result {
+            margin: 20px auto;
+            background-color: #f9f9f9;
+            padding: 10px;
+            width: 100%;
+            max-width: 600px;
+            height: 200px;
+            overflow-y: auto;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+    .flex-wrapper {
+    display: flex;
+    justify-content: space-between; 
+    width: 100%;
+    max-width: 1200px; 
+    margin: 0 auto; 
+}
+
+    </style>
+</head>
+<body>
+    <div class="flex-wrapper">
+    <div class="container">
+        <img src="https://collegeinnepal.com/wp-content/uploads/2024/02/kusom-1024x576.jpg" alt="Kathmandu University Logo">
+        <h1>Coordinate Calculator</h1>
+        <h3>Calculate coordinates based on initial station, distances, and interior angles</h3>
+
+        <form id="traverse-form">
+            <h2>Initial Station</h2>
+            
+            <div class="flex-row">
+                <label for="x1">Initial X</label>
+                <input type="number" id="x1" required>
+
+                <label for="y1">Initial Y </label>
+                <input type="number" id="y1" required>
+                
+                <label for="bear">Initial Bearing</label>
+                <input type="number" id="bear" required>
+
+
+                
+            </div>
+
+            <!-- Number of stations -->
+            <label for="num-stations">Number of Stations:</label>
+            <input type="number" id="num-stations" min="1" required >
+
+            <!-- Flexbox row for "Generate Input Fields" button -->
+            <div class="flex-buttons">
+                <button type="button" onclick="generateFields()">Generate Input Fields</button>
+                <button type="button" onclick="calculateCoordinates()">Calculate Coordinates</button>
+            </div>
+
+           
+            
+
+        </form>
+
+        
+        <h2>Results:</h2>
+        <pre id="result"></pre>
+    </div>
+
+    <div class="side-container">
+        <h3> This is the project based on the Traverse calculation</h3>
+    </div>
+    </div>
+
+    <script src="traverse.js"></script>
+</body>
+</html>
